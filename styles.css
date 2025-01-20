@@ -1,0 +1,190 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+}
+
+.split-screen {
+    display: flex;
+    height: 100vh;
+}
+
+.left {
+    flex: 1.2;
+    position: relative;
+}
+
+.image-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(198, 118, 21, 0.8);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+.overlay h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.overlay p {
+    font-size: 1.2rem;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.right {
+    flex: 0.8;
+    background: #FFF8E7; /* Fundo bege claro vintage */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(205, 133, 63, 0.2); /* Sombra em tom de peru */
+}
+
+h2 {
+    text-align: center;
+    color: #D35400; /* Laranja escuro */
+    margin-bottom: 30px;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 30px;
+}
+
+input {
+    width: 100%;
+    padding: 12px 0;
+    font-size: 16px;
+    border: none;
+    border-bottom: 2px solid #DEB887; /* Burlywood */
+    outline: none;
+    transition: 0.3s;
+    background: transparent;
+}
+
+label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 12px 0;
+    font-size: 16px;
+    color: #CD853F; /* Peru */
+    pointer-events: none;
+    transition: 0.3s;
+}
+
+input:focus,
+input:valid {
+    border-bottom: 2px solid #FF8C00; /* DarkOrange */
+}
+
+input:focus ~ label,
+input:valid ~ label {
+    top: -20px;
+    font-size: 12px;
+    color: #D35400; /* Laranja escuro */
+    font-weight: 600;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background: #FF8C00; /* DarkOrange */
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
+}
+
+button:hover {
+    background: #D35400; /* Laranja escuro */
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(255, 140, 0, 0.4);
+}
+
+.links {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.links a {
+    color: #CD853F; /* Peru */
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.links a:hover {
+    color: #D35400; /* Laranja escuro */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .split-screen {
+        flex-direction: column;
+    }
+    
+    .left {
+        flex: none;
+        height: 35vh;
+    }
+    
+    .right {
+        flex: none;
+        height: 65vh;
+    }
+    
+    .overlay h1 {
+        font-size: 2rem;
+    }
+    
+    .login-box {
+        width: 90%;
+        padding: 20px;
+    }
+}
